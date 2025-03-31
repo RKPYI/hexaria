@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexaria</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/svg+xml" href="./571701.png">
+</head>
+<body>
+    <div class="container">
+        <div class="menu" id="menu">
+            <h2><img src="./571701.png" alt="" width="50">HEXARIA</h2>
+
+            <div class="welcome-screen">
+              <h3>Welcome to Hexaria!</h3>
+              <p id="instruction" class="instruction">Game Instruction: <br>Conquer hexagons, outsmart your opponent, and dominate the board!</p>
+            </div>
+
+
+            <label for="player1Name">Player 1 Name:</label>
+            <input type="text" id="player1Name" placeholder="Player 1">
+
+            <label for="player2Type">Play Against:</label>
+            <select id="player2Type">
+              <option value="player2">Player 2</option>
+              <option value="bot">Bot</option>
+            </select>
+
+            <label for="player2Name">Player 2 Name:</label>
+            <input type="text" id="player2Name" placeholder="Player 2">
+
+
+            <label for="level">Level:</label>
+            <select id="level">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+
+            <button class="startBtn" id="startBtn" disabled>Play Game</button>
+        </div>
+
+        <div class="game" id="game" style="display: none;">
+            <h2><img src="./571701.png" alt="" width="50">HEXARIA</h2>
+            <div class="game-info">
+                <div class="player-info">
+                    <span id="player1NameDisplay">Player 1:</span> <span id="player1Score">0</span>
+                </div>
+                <div class="player-info">
+                    <span id="player2NameDisplay">Player 2:</span> <span id="player2Score">0</span>
+                </div>
+                <div class="current-turn">
+                    Current Turn: <span id="currentTurnValue"></span>
+                </div>
+            </div>
+            <canvas id="canvas"></canvas>
+            <button id="newGameBtn">New Game</button>
+        </div>
+
+        <div class="leaderboard" id="leaderboard" >
+            <h3>Leaderboard</h3>
+            <label for="sortBy">Sort By:</label>
+            <select id="sortBy">
+                <option value="date">Date</option>
+                <option value="score">Score</option>
+            </select>
+            <ul id="leaderboardList" class="leaderboardList"></ul>
+        </div>
+
+        <div id="gameOverModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="gameOverMessage"></h2>
+                <p>Winner: <span id="winnerName"></span></p>
+                <p>Score: <span id="winnerScore"></span></p>
+                <button id="restartBtn">Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="placeSound" src="./menuchoose.wav"></audio>
+
+    <script src="./menu.js"></script>
+    <script src="./game.js"></script>
+    <script src="./leaderboard.js"></script>
+</body>
+</html>
